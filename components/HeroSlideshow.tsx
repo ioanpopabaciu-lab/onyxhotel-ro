@@ -61,15 +61,12 @@ export default function HeroSlideshow() {
 
         {/* Title */}
         <h1 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(3.5rem, 10vw, 8.5rem)", fontWeight: 900, color: "#fff", lineHeight: 0.9, letterSpacing: "-0.02em", marginBottom: "1.4rem", textShadow: "0 2px 30px rgba(0,0,0,0.4)" }}>
-          ONYX B&B
+          ONYX B&amp;B
         </h1>
 
         {/* Taglines */}
-        <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(1.2rem, 2.6vw, 1.6rem)", fontWeight: 400, color: "rgba(255,255,255,0.92)", letterSpacing: "0.08em", marginBottom: "0.8rem" }}>
+        <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(1.2rem, 2.6vw, 1.6rem)", fontWeight: 400, color: "rgba(255,255,255,0.92)", letterSpacing: "0.08em", marginBottom: "3rem" }}>
           Hotel · Restaurant · Evenimente
-        </p>
-        <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(1.05rem, 2.2vw, 1.35rem)", fontWeight: 500, color: "var(--gold)", letterSpacing: "0.1em", marginBottom: "3rem" }}>
-          La doar 100 metri de Vama Borș I
         </p>
 
         {/* 4 CTA Buttons */}
