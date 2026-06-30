@@ -61,7 +61,7 @@ export default function HeroSlideshow() {
 
         {/* Title */}
         <h1 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(3.5rem, 10vw, 8.5rem)", fontWeight: 900, color: "#fff", lineHeight: 0.9, letterSpacing: "-0.02em", marginBottom: "1.4rem", textShadow: "0 2px 30px rgba(0,0,0,0.4)" }}>
-          ONYX B&amp;B
+          ONYX B<span style={{ fontFamily: "var(--font-inter)", fontWeight: 900 }}>&</span>B
         </h1>
 
         {/* Taglines */}
