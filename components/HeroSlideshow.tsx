@@ -48,29 +48,32 @@ export default function HeroSlideshow() {
       <div style={{ position: "relative", zIndex: 3, height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "0 1.5rem" }}>
 
         {/* Badge */}
-        <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.65)", padding: "0.7rem 2rem", marginBottom: "2.2rem", backdropFilter: "blur(4px)", background: "rgba(0,0,0,0.25)" }}>
-          <span style={{ color: "var(--gold)", fontSize: "clamp(0.85rem, 1.6vw, 1.05rem)", fontFamily: "var(--font-inter)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" }}>
+        <div className="hero-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.65)", padding: "0.7rem 2rem", marginBottom: "2.2rem", backdropFilter: "blur(4px)", background: "rgba(0,0,0,0.25)" }}>
+          <span style={{ color: "var(--gold)", fontSize: "clamp(0.75rem, 1.6vw, 1.05rem)", fontFamily: "var(--font-inter)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase" }}>
             ★★★ Hotel · 100m de Vama Borș · E60
           </span>
         </div>
 
         {/* Welcome */}
-        <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(1rem, 2.2vw, 1.3rem)", fontWeight: 500, color: "rgba(255,255,255,0.85)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem" }}>
+        <p className="hero-welcome" style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem, 2.2vw, 1.3rem)", fontWeight: 500, color: "rgba(255,255,255,0.85)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.8rem" }}>
           Bine ai venit la
         </p>
 
         {/* Title */}
-        <h1 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(3.5rem, 10vw, 8.5rem)", fontWeight: 900, color: "#fff", lineHeight: 0.9, letterSpacing: "-0.02em", marginBottom: "1.4rem", textShadow: "0 2px 30px rgba(0,0,0,0.4)" }}>
-          ONYX B<span style={{ fontFamily: "var(--font-inter)", fontWeight: 900 }}>&</span>B
+        <h1 style={{ fontFamily: "var(--font-playfair)", fontWeight: 900, color: "#fff", lineHeight: 1, letterSpacing: "-0.02em", marginBottom: "1.2rem", textShadow: "0 2px 30px rgba(0,0,0,0.4)", margin: "0 0 1.2rem 0" }}>
+          <span style={{ display: "block", fontSize: "clamp(3.5rem, 10vw, 8.5rem)" }}>ONYX</span>
+          <span style={{ display: "block", fontSize: "clamp(1.75rem, 5vw, 4.25rem)", letterSpacing: "0.08em" }}>
+            B<span style={{ fontFamily: "var(--font-inter)", fontWeight: 900 }}>&</span>B
+          </span>
         </h1>
 
         {/* Taglines */}
-        <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(1.2rem, 2.6vw, 1.6rem)", fontWeight: 400, color: "rgba(255,255,255,0.92)", letterSpacing: "0.08em", marginBottom: "3rem" }}>
+        <p className="hero-tagline" style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(1rem, 2.6vw, 1.6rem)", fontWeight: 400, color: "rgba(255,255,255,0.92)", letterSpacing: "0.08em", marginBottom: "2.2rem", marginTop: "0.6rem" }}>
           Hotel · Restaurant · Evenimente
         </p>
 
         {/* 4 CTA Buttons */}
-        <div style={{ display: "flex", gap: "0.8rem", flexWrap: "wrap", justifyContent: "center" }}>
+        <div className="hero-btns" style={{ display: "flex", gap: "0.8rem", flexWrap: "wrap", justifyContent: "center" }}>
           {ctaButtons.map((btn) => (
             <Link key={btn.label} href={btn.href}
               className={btn.primary ? "btn-gold" : "btn-white"}
@@ -82,9 +85,9 @@ export default function HeroSlideshow() {
         </div>
 
         {/* Quick contact */}
-        <div style={{ marginTop: "2.8rem", display: "flex", gap: "2.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+        <div className="hero-contact" style={{ marginTop: "2rem", display: "flex", gap: "2rem", flexWrap: "wrap", justifyContent: "center" }}>
           {[["0732 403 464", "tel:0732403464"], ["0753 527 114", "tel:0753527114"]].map(([num, href]) => (
-            <a key={num} href={href} style={{ fontFamily: "var(--font-inter)", fontSize: "0.8rem", color: "rgba(255,255,255,0.72)", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.4rem", transition: "color 0.2s" }}
+            <a key={num} href={href} style={{ fontFamily: "var(--font-inter)", fontSize: "0.85rem", color: "rgba(255,255,255,0.72)", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.4rem", transition: "color 0.2s" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.72)")}
             >
@@ -93,6 +96,19 @@ export default function HeroSlideshow() {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 600px) {
+          .hero-badge { padding: 0.5rem 1rem !important; margin-bottom: 1.2rem !important; }
+          .hero-badge span { font-size: 0.62rem !important; letter-spacing: 0.08em !important; }
+          .hero-welcome { font-size: 0.72rem !important; margin-bottom: 0.5rem !important; letter-spacing: 0.2em !important; }
+          .hero-tagline { font-size: 0.9rem !important; margin-bottom: 1.5rem !important; }
+          .hero-btns { gap: 0.5rem !important; }
+          .hero-btns a { font-size: 0.6rem !important; padding: 0.7rem 1.1rem !important; }
+          .hero-contact { margin-top: 1.2rem !important; gap: 1.2rem !important; }
+          .hero-contact a { font-size: 0.78rem !important; }
+        }
+      `}</style>
 
       {/* Slide indicators */}
       <div style={{ position: "absolute", bottom: "2.5rem", left: "50%", transform: "translateX(-50%)", zIndex: 4, display: "flex", gap: "0.5rem" }}>
