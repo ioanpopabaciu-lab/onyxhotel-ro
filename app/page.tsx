@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroSlideshow from "@/components/HeroSlideshow";
+import BookingWidget from "@/components/BookingWidget";
+import Reviews from "@/components/Reviews";
 
 const features = [
   { icon: "🛏️", title: "Camere confortabile", desc: "Camere climatizate cu TV, baie privată și paturi matrimoniale. Curățenie zilnică, lenjerie proaspătă." },
@@ -14,6 +16,13 @@ export default function HomePage() {
   return (
     <>
       <HeroSlideshow />
+
+      {/* WIDGET REZERVARE */}
+      <div style={{ background: "var(--anthracite)", padding: "0 2rem 2rem" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", transform: "translateY(-50px)" }}>
+          <BookingWidget />
+        </div>
+      </div>
 
       {/* Bandă de locație */}
       <div style={{ background: "var(--gold)", padding: "1rem 2rem" }}>
@@ -162,7 +171,7 @@ export default function HomePage() {
             </div>
             <div>
               <iframe
-                src="https://www.google.com/maps?q=47.115107,21.806085&z=16&output=embed"
+                src="https://maps.google.com/maps?q=Soseaua+E60+Borsului+157+Bors+Bihor+Romania&z=17&output=embed"
                 width="100%"
                 height="380"
                 style={{ border: 0, display: "block" }}
@@ -175,6 +184,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <Reviews />
 
       <style>{`
         @media (max-width: 768px) {

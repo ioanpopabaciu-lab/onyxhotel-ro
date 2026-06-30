@@ -160,7 +160,7 @@ export default function ContactPage() {
           </p>
         </div>
         <iframe
-          src="https://www.google.com/maps?q=47.115107,21.806085&z=16&output=embed"
+          src="https://maps.google.com/maps?q=Soseaua+E60+Borsului+157+Bors+Bihor+Romania&z=17&output=embed"
           width="100%"
           height="450"
           style={{ border: 0, display: "block", marginBottom: "1rem" }}

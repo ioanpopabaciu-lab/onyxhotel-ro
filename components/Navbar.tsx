@@ -23,8 +23,8 @@ export default function Navbar() {
   }, []);
 
   const navBg = scrolled
-    ? "rgba(34,34,34,0.97)"
-    : "linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.0) 100%)";
+    ? "rgba(22,22,22,0.98)"
+    : "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)";
 
   return (
     <header style={{
@@ -38,7 +38,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.8rem", textDecoration: "none" }}>
-          <div style={{ position: "relative", width: scrolled ? 56 : 72, height: scrolled ? 56 : 72, transition: "all 0.4s", flexShrink: 0 }}>
+          <div style={{ position: "relative", width: scrolled ? 64 : 84, height: scrolled ? 64 : 84, transition: "all 0.4s", flexShrink: 0 }}>
             <Image src="/images/logo.png" alt="ONYX B&B Hotel" fill style={{ objectFit: "contain" }} priority />
           </div>
           <div>
