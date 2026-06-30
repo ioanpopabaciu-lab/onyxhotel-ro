@@ -48,27 +48,27 @@ export default function HeroSlideshow() {
       <div style={{ position: "relative", zIndex: 3, height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "0 1.5rem" }}>
 
         {/* Badge */}
-        <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.55)", padding: "0.45rem 1.4rem", marginBottom: "2rem", backdropFilter: "blur(4px)", background: "rgba(0,0,0,0.18)" }}>
-          <span style={{ color: "var(--gold)", fontSize: "0.62rem", fontFamily: "var(--font-inter)", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>
+        <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.65)", padding: "0.7rem 2rem", marginBottom: "2.2rem", backdropFilter: "blur(4px)", background: "rgba(0,0,0,0.25)" }}>
+          <span style={{ color: "var(--gold)", fontSize: "clamp(0.85rem, 1.6vw, 1.05rem)", fontFamily: "var(--font-inter)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" }}>
             ★★★ Hotel · 100m de Vama Borș · E60
           </span>
         </div>
 
         {/* Welcome */}
-        <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.7rem, 1.5vw, 0.82rem)", fontWeight: 400, color: "rgba(255,255,255,0.72)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.8rem" }}>
+        <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(1rem, 2.2vw, 1.3rem)", fontWeight: 500, color: "rgba(255,255,255,0.85)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem" }}>
           Bine ai venit la
         </p>
 
         {/* Title */}
-        <h1 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(3.5rem, 10vw, 8.5rem)", fontWeight: 900, color: "#fff", lineHeight: 0.9, letterSpacing: "-0.02em", marginBottom: "1.2rem", textShadow: "0 2px 30px rgba(0,0,0,0.4)" }}>
+        <h1 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(3.5rem, 10vw, 8.5rem)", fontWeight: 900, color: "#fff", lineHeight: 0.9, letterSpacing: "-0.02em", marginBottom: "1.4rem", textShadow: "0 2px 30px rgba(0,0,0,0.4)" }}>
           ONYX B&B
         </h1>
 
         {/* Taglines */}
-        <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.85rem, 1.8vw, 1.05rem)", fontWeight: 300, color: "rgba(255,255,255,0.85)", letterSpacing: "0.1em", marginBottom: "0.5rem" }}>
+        <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(1.2rem, 2.6vw, 1.6rem)", fontWeight: 400, color: "rgba(255,255,255,0.92)", letterSpacing: "0.08em", marginBottom: "0.8rem" }}>
           Hotel · Restaurant · Evenimente
         </p>
-        <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(0.78rem, 1.4vw, 0.92rem)", fontWeight: 300, color: "var(--gold)", letterSpacing: "0.14em", marginBottom: "3rem" }}>
+        <p style={{ fontFamily: "var(--font-inter)", fontSize: "clamp(1.05rem, 2.2vw, 1.35rem)", fontWeight: 500, color: "var(--gold)", letterSpacing: "0.1em", marginBottom: "3rem" }}>
           La doar 100 metri de Vama Borș I
         </p>
 
