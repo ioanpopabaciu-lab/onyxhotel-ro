@@ -45,17 +45,9 @@ export default function Navbar() {
       }}>
 
         {/* Logo */}
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.7rem", textDecoration: "none" }}>
-          <div style={{ position: "relative", width: scrolled ? 64 : 88, height: scrolled ? 64 : 88, transition: "all 0.4s", flexShrink: 0 }}>
-            <Image src="/images/logo-icon.png" alt="ONYX B&B" fill style={{ objectFit: "contain" }} priority />
-          </div>
-          <div>
-            <div style={{ fontFamily: "var(--font-playfair)", fontSize: scrolled ? "1.05rem" : "1.25rem", fontWeight: 900, color: "var(--gold)", letterSpacing: "0.04em", lineHeight: 1, transition: "font-size 0.4s" }}>
-              ONYX B&B
-            </div>
-            <div style={{ fontFamily: "var(--font-inter)", fontSize: "0.54rem", fontWeight: 500, color: scrolled ? "#999" : "rgba(255,255,255,0.65)", letterSpacing: "0.22em", textTransform: "uppercase", marginTop: "2px", transition: "color 0.4s" }}>
-              Hotel & Restaurant
-            </div>
+        <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+          <div style={{ position: "relative", width: scrolled ? 190 : 230, height: scrolled ? 75 : 90, transition: "all 0.4s", flexShrink: 0 }}>
+            <Image src={scrolled ? "/images/logo.png" : "/images/logo-white.png"} alt="ONYX B&B Hotel & Restaurant" fill style={{ objectFit: "contain", objectPosition: "left center" }} priority />
           </div>
         </Link>
 

@@ -24,12 +24,8 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.2rem" }}>
-              <Image src="/images/logo-icon.png" alt="ONYX B&B" width={48} height={48} style={{ objectFit: "contain" }} />
-              <div>
-                <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.1rem", fontWeight: 900, color: "var(--gold)" }}>ONYX B&B</div>
-                <div style={{ fontFamily: "var(--font-inter)", fontSize: "0.57rem", color: "var(--text-light)", letterSpacing: "0.2em", textTransform: "uppercase" }}>Hotel & Restaurant</div>
-              </div>
+            <div style={{ position: "relative", width: 200, height: 80, marginBottom: "1.2rem" }}>
+              <Image src="/images/logo.png" alt="ONYX B&B Hotel & Restaurant" fill style={{ objectFit: "contain", objectPosition: "left center" }} />
             </div>
             <p style={{ fontFamily: "var(--font-inter)", color: "var(--text-mid)", fontSize: "0.82rem", lineHeight: 1.8 }}>
               Hotel 3 stele la 100m de Vama Borș, direct pe E60. Cazare, restaurant, catering și evenimente.
