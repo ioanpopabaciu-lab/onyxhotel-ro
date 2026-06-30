@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://onyxhotel.ro/sitemap.xml
+
+# Block internal/admin paths if any
+Disallow: /api/

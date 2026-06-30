@@ -14,7 +14,7 @@ function Stars({ count }: { count: number }) {
   return (
     <div style={{ display: "flex", gap: "2px" }}>
       {[1,2,3,4,5].map(i => (
-        <span key={i} style={{ color: i <= count ? "var(--gold)" : "#444", fontSize: "0.85rem" }}>★</span>
+        <span key={i} style={{ color: i <= count ? "var(--gold)" : "#ddd", fontSize: "0.85rem" }}>★</span>
       ))}
     </div>
   );
@@ -25,56 +25,55 @@ export default function Reviews() {
   const visible = [reviews[active], reviews[(active + 1) % reviews.length], reviews[(active + 2) % reviews.length]];
 
   return (
-    <section style={{ padding: "7rem 2rem", background: "var(--anthracite-mid)" }}>
+    <section style={{ padding: "7rem 2rem", background: "var(--bg-alt)" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
           <p className="section-label">Ce spun oaspeții noștri</p>
           <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}>Recenzii verificate</h2>
           <div className="gold-line" />
-          {/* Rating general */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.8rem", marginTop: "1.5rem" }}>
             <Stars count={5} />
             <span style={{ fontFamily: "var(--font-playfair)", fontSize: "1.8rem", color: "var(--gold)", fontWeight: 900 }}>4.8</span>
-            <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.78rem", color: "#888" }}>/ 5 · bazat pe {reviews.length}+ recenzii</span>
+            <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.78rem", color: "var(--text-light)" }}>/ 5 · bazat pe {reviews.length}+ recenzii</span>
           </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginBottom: "2.5rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginBottom: "2.5rem" }} className="reviews-grid">
           {visible.map((r, i) => (
-            <div key={i} style={{ background: "#252525", padding: "2rem", borderTop: "3px solid var(--gold)" }}>
+            <div key={i} style={{ background: "#fff", padding: "2rem", borderTop: "3px solid var(--gold)", boxShadow: "var(--shadow)" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1rem" }}>
                 <div>
-                  <p style={{ fontFamily: "var(--font-inter)", fontWeight: 700, color: "var(--cream)", fontSize: "0.9rem", marginBottom: "0.2rem" }}>{r.name}</p>
-                  <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.68rem", color: "#666" }}>{r.date}</p>
+                  <p style={{ fontFamily: "var(--font-inter)", fontWeight: 700, color: "var(--text)", fontSize: "0.9rem", marginBottom: "0.2rem" }}>{r.name}</p>
+                  <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.68rem", color: "var(--text-light)" }}>{r.date}</p>
                 </div>
                 <Stars count={r.rating} />
               </div>
-              <p style={{ fontFamily: "var(--font-inter)", color: "#aaa", fontSize: "0.83rem", lineHeight: 1.8, fontStyle: "italic" }}>
+              <p style={{ fontFamily: "var(--font-inter)", color: "var(--text-mid)", fontSize: "0.83rem", lineHeight: 1.8, fontStyle: "italic" }}>
                 &ldquo;{r.text}&rdquo;
               </p>
             </div>
           ))}
         </div>
 
-        {/* Navigare */}
+        {/* Navigation dots */}
         <div style={{ display: "flex", justifyContent: "center", gap: "0.5rem" }}>
           {reviews.map((_, i) => (
             <button key={i} onClick={() => setActive(i)} style={{
               width: i === active ? 28 : 8, height: 8,
-              background: i === active ? "var(--gold)" : "rgba(255,255,255,0.2)",
+              background: i === active ? "var(--gold)" : "rgba(0,0,0,0.15)",
               border: "none", cursor: "pointer", transition: "all 0.3s", padding: 0,
             }} />
           ))}
         </div>
 
-        <p style={{ textAlign: "center", fontFamily: "var(--font-inter)", fontSize: "0.7rem", color: "#444", marginTop: "1.5rem" }}>
+        <p style={{ textAlign: "center", fontFamily: "var(--font-inter)", fontSize: "0.7rem", color: "var(--text-light)", marginTop: "1.5rem" }}>
           Recenzii reale de la oaspeții noștri · Google Maps & direct
         </p>
       </div>
 
       <style>{`
         @media (max-width: 768px) {
-          div[style*="repeat(3, 1fr)"] { grid-template-columns: 1fr !important; }
+          .reviews-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>
