@@ -46,8 +46,8 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.7rem", textDecoration: "none" }}>
-          <div style={{ position: "relative", width: scrolled ? 54 : 72, height: scrolled ? 54 : 72, transition: "all 0.4s", flexShrink: 0 }}>
-            <Image src="/images/logo.png" alt="ONYX B&B" fill style={{ objectFit: "contain" }} priority />
+          <div style={{ position: "relative", width: scrolled ? 64 : 88, height: scrolled ? 64 : 88, transition: "all 0.4s", flexShrink: 0 }}>
+            <Image src="/images/logo-icon.png" alt="ONYX B&B" fill style={{ objectFit: "contain" }} priority />
           </div>
           <div>
             <div style={{ fontFamily: "var(--font-playfair)", fontSize: scrolled ? "1.05rem" : "1.25rem", fontWeight: 900, color: "var(--gold)", letterSpacing: "0.04em", lineHeight: 1, transition: "font-size 0.4s" }}>

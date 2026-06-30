@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.2rem" }}>
-              <Image src="/images/logo.png" alt="ONYX B&B" width={48} height={48} style={{ objectFit: "contain" }} />
+              <Image src="/images/logo-icon.png" alt="ONYX B&B" width={48} height={48} style={{ objectFit: "contain" }} />
               <div>
                 <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.1rem", fontWeight: 900, color: "var(--gold)" }}>ONYX B&B</div>
                 <div style={{ fontFamily: "var(--font-inter)", fontSize: "0.57rem", color: "var(--text-light)", letterSpacing: "0.2em", textTransform: "uppercase" }}>Hotel & Restaurant</div>
