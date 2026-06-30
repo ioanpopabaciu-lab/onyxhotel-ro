@@ -56,9 +56,9 @@ export default function Navbar() {
           {links.map((l) => (
             <Link key={l.href} href={l.href} style={{
               fontFamily: "var(--font-inter)",
-              fontSize: "0.68rem",
+              fontSize: "0.92rem",
               fontWeight: 600,
-              letterSpacing: "0.1em",
+              letterSpacing: "0.06em",
               textTransform: "uppercase",
               color: linkColor,
               textDecoration: "none",
