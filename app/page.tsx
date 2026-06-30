@@ -92,7 +92,7 @@ export default function HomePage() {
           <h2 className="section-title" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", marginBottom: "0.5rem" }}>Restaurant cu 100 de locuri</h2>
           <div className="gold-line" />
           <p style={{ fontFamily: "var(--font-inter)", color: "rgba(255,255,255,0.8)", fontSize: "0.9rem", lineHeight: 1.9, margin: "1.5rem 0" }}>
-            Bucătărie tradițională românească și internațională. Bar funcțional. Mic dejun, prânz și cină. Meniu variat, porții consistente — perfect pentru șoferi profesioniști și delegații de afaceri.
+            Bucătărie tradițională românească și internațională. Bar funcțional. Mic dejun 07:00–10:00, prânz și cină până la 23:00. Meniu zilei la prânz: <strong style={{color:"var(--gold)"}}>30 lei</strong>. Animale de companie permise.
           </p>
           <Link href="/restaurant" className="btn-gold">Descoperă meniul</Link>
         </div>

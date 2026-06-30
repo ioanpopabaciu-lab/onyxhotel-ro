@@ -95,13 +95,13 @@ export default function RestaurantPage() {
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.65rem", color: "var(--gold)", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "0.8rem" }}>Clienți cazați</p>
               <p style={{ fontFamily: "var(--font-playfair)", fontSize: "3rem", fontWeight: 900, color: "var(--cream)", lineHeight: 1 }}>30</p>
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem", color: "#888", marginTop: "0.3rem" }}>lei / persoană</p>
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.72rem", color: "#666", marginTop: "0.8rem" }}>Tarif special pentru oaspeții hotelului</p>
+              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.72rem", color: "#666", marginTop: "0.8rem" }}>Tarif special pentru oaspeții hotelului · 07:00–10:00</p>
             </div>
             <div style={{ padding: "2.5rem 2rem", background: "#2a2a2a", borderBottom: "3px solid rgba(201,168,76,0.3)" }}>
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.65rem", color: "var(--gold)", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "0.8rem" }}>Clienți externi</p>
               <p style={{ fontFamily: "var(--font-playfair)", fontSize: "3rem", fontWeight: 900, color: "var(--cream)", lineHeight: 1 }}>35</p>
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem", color: "#888", marginTop: "0.3rem" }}>lei / persoană</p>
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.72rem", color: "#666", marginTop: "0.8rem" }}>Fără rezervare necesară · 07:00–10:30</p>
+              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.72rem", color: "#666", marginTop: "0.8rem" }}>Fără rezervare necesară · 07:00–10:00</p>
             </div>
           </div>
           <p style={{ fontFamily: "var(--font-inter)", color: "#666", fontSize: "0.75rem" }}>
@@ -119,6 +119,21 @@ export default function RestaurantPage() {
           <p style={{ fontFamily: "var(--font-inter)", color: "#555", fontSize: "0.75rem", marginTop: "1rem" }}>
             * Prețurile complete sunt afișate în restaurant sau la cerere. Meniul se poate modifica sezonier.
           </p>
+        </div>
+
+        {/* Meniu zilei banner */}
+        <div style={{ background: "var(--gold)", padding: "1.5rem 2.5rem", marginBottom: "3rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <span style={{ fontSize: "1.8rem" }}>🍱</span>
+            <div>
+              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.65rem", fontWeight: 700, color: "var(--anthracite)", letterSpacing: "0.15em", textTransform: "uppercase" }}>Ofertă zilnică</p>
+              <p style={{ fontFamily: "var(--font-playfair)", fontSize: "1.3rem", fontWeight: 700, color: "var(--anthracite)" }}>Meniul zilei — supă + fel principal</p>
+            </div>
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <p style={{ fontFamily: "var(--font-playfair)", fontSize: "2.5rem", fontWeight: 900, color: "var(--anthracite)", lineHeight: 1 }}>30 <span style={{ fontSize: "1rem", fontWeight: 400 }}>lei</span></p>
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.65rem", color: "rgba(34,34,34,0.7)", textTransform: "uppercase", letterSpacing: "0.1em" }}>disponibil la prânz</p>
+          </div>
         </div>
 
         {categories.map((cat) => (

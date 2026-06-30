@@ -171,7 +171,7 @@ export default function CamerePage() {
               { label: "Check-in", value: "după 14:00" },
               { label: "Check-out", value: "până la 11:00" },
               { label: "Recepție", value: "24 / 7" },
-              { label: "Parcare TIR", value: "Disponibilă" },
+              { label: "Animale de companie", value: "Permise" },
             ].map((item) => (
               <div key={item.label} style={{ background: "var(--anthracite-mid)", padding: "2rem 1rem" }}>
                 <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", color: "var(--gold)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.4rem" }}>{item.label}</p>
