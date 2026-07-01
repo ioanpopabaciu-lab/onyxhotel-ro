@@ -17,9 +17,9 @@ const whyOnyx = [
 ];
 
 const camere = [
-  { name: "Single", pret: 195, img: "/images/hotel-1.jpg", desc: "Ideal pentru transportatori și oameni de afaceri în deplasare." },
-  { name: "Dublă", pret: 230, img: "/images/hotel-2.jpg", desc: "Confort superior pentru cupluri sau colegi de echipă." },
-  { name: "Triplă", pret: 300, img: "/images/hotel-3.jpg", desc: "Spațiu generos pentru familie sau grupuri mici." },
+  { name: "Single", pret: 195, img: "/images/camera-single-2.jpg", desc: "Ideal pentru transportatori și oameni de afaceri în deplasare." },
+  { name: "Dublă", pret: 230, img: "/images/camera-matrimoniala.png", desc: "Confort superior pentru cupluri sau colegi de echipă." },
+  { name: "Triplă", pret: 300, img: "/images/camera-tripla.jpg", desc: "Spațiu generos pentru familie sau grupuri mici." },
 ];
 
 const cateringServices = [
