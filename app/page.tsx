@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroSlideshow from "@/components/HeroSlideshow";
+import BookingWidget from "@/components/BookingWidget";
 import Reviews from "@/components/Reviews";
 
 const whyOnyx = [
@@ -32,6 +33,13 @@ export default function HomePage() {
   return (
     <>
       <HeroSlideshow />
+
+      {/* WIDGET REZERVARE */}
+      <div style={{ background: "rgba(18,18,18,0.97)", borderBottom: "2px solid rgba(201,168,76,0.3)" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem" }}>
+          <BookingWidget />
+        </div>
+      </div>
 
       {/* DE CE ONYX — 8 iconuri */}
       <section style={{ padding: "4rem 2rem 6rem", background: "#fff" }}>
