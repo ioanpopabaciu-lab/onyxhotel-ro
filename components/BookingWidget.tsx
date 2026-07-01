@@ -14,10 +14,10 @@ const LABELS: Record<string, string> = {
   tripla: "Triplă (300 lei/noapte)",
 };
 
-const ORA_PRICES: { durata: string; pret: number }[] = [
-  { durata: "1 oră", pret: 50 },
-  { durata: "2 ore", pret: 80 },
-  { durata: "3 ore", pret: 120 },
+const ORA_PRICES: { durata: string; ore: number; pret: number }[] = [
+  { durata: "3 ore", ore: 3, pret: 90 },
+  { durata: "5 ore", ore: 5, pret: 130 },
+  { durata: "7 ore", ore: 7, pret: 150 },
 ];
 
 export default function BookingWidget() {
@@ -36,6 +36,7 @@ export default function BookingWidget() {
 
   // Per oră
   const [oraSelectata, setOraSelectata] = useState(0);
+  const [oraStart, setOraStart] = useState("");
 
   const calculeaza = () => {
     if (!checkin || !checkout) return;
@@ -173,25 +174,65 @@ export default function BookingWidget() {
       {mode === "ora" && (
         <div style={{ padding: "0 2rem" }}>
           <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "1.5rem", textAlign: "center" }}>
-            Cameră cu ora · Disponibil 24/7
+            Cameră cu ora · Recepție 24/7 · Max. check-out 23:00
           </p>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem", marginBottom: "1.5rem" }} className="ora-grid">
-            {ORA_PRICES.map((opt, idx) => (
-              <div key={opt.durata}
-                onClick={() => setOraSelectata(idx)}
-                style={{
-                  border: `2px solid ${oraSelectata === idx ? "var(--gold)" : "rgba(201,168,76,0.2)"}`,
-                  background: oraSelectata === idx ? "rgba(201,168,76,0.12)" : "rgba(0,0,0,0.3)",
-                  padding: "1.5rem 1rem", textAlign: "center", cursor: "pointer",
-                  transition: "all 0.25s",
+          {/* Durata */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem", marginBottom: "1.2rem" }} className="ora-grid">
+            {ORA_PRICES.map((opt, idx) => {
+              // Calculate max start hour so end <= 23:00
+              const maxStartH = 23 - opt.ore;
+              const startH = oraStart ? parseInt(oraStart.split(":")[0]) : null;
+              const endTime = startH !== null ? `${String(startH + opt.ore).padStart(2, "0")}:00` : null;
+              const isOver = startH !== null && startH + opt.ore > 23;
+              return (
+                <div key={opt.durata}
+                  onClick={() => { setOraSelectata(idx); if (oraStart) { const h = parseInt(oraStart.split(":")[0]); if (h + opt.ore > 23) setOraStart(`${String(23 - opt.ore).padStart(2, "0")}:00`); } }}
+                  style={{
+                    border: `2px solid ${oraSelectata === idx ? "var(--gold)" : "rgba(201,168,76,0.2)"}`,
+                    background: oraSelectata === idx ? "rgba(201,168,76,0.12)" : "rgba(0,0,0,0.3)",
+                    padding: "1.2rem 0.8rem", textAlign: "center", cursor: "pointer", transition: "all 0.25s",
+                  }}
+                >
+                  <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.65rem", fontWeight: 700, color: "var(--gold)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.4rem" }}>{opt.durata}</p>
+                  <p style={{ fontFamily: "var(--font-playfair)", fontSize: "1.8rem", fontWeight: 900, color: "#fff", lineHeight: 1 }}>{opt.pret}</p>
+                  <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.65rem", color: "#888", marginTop: "0.2rem" }}>lei</p>
+                  <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", color: "rgba(201,168,76,0.6)", marginTop: "0.4rem" }}>max. intrare {String(maxStartH).padStart(2, "0")}:00</p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Ora intrare */}
+          <div style={{ marginBottom: "1.2rem" }}>
+            <label style={labelStyle}>Ora intrare</label>
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
+              <input
+                type="time"
+                value={oraStart}
+                min="00:00"
+                max={`${String(23 - ORA_PRICES[oraSelectata].ore).padStart(2, "0")}:00`}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  const h = parseInt(val.split(":")[0]);
+                  if (h + ORA_PRICES[oraSelectata].ore > 23) {
+                    setOraStart(`${String(23 - ORA_PRICES[oraSelectata].ore).padStart(2, "0")}:00`);
+                  } else {
+                    setOraStart(val);
+                  }
                 }}
-              >
-                <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.65rem", fontWeight: 700, color: "var(--gold)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.5rem" }}>{opt.durata}</p>
-                <p style={{ fontFamily: "var(--font-playfair)", fontSize: "2rem", fontWeight: 900, color: "#fff", lineHeight: 1 }}>{opt.pret}</p>
-                <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.7rem", color: "#888", marginTop: "0.3rem" }}>lei</p>
-              </div>
-            ))}
+                style={{ ...inputStyle, width: "auto", minWidth: 140 }}
+              />
+              {oraStart && (
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.8rem", color: "#888" }}>→ check-out:</span>
+                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "1rem", fontWeight: 700, color: "var(--gold)" }}>
+                    {String(parseInt(oraStart.split(":")[0]) + ORA_PRICES[oraSelectata].ore).padStart(2, "0")}:00
+                  </span>
+                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.72rem", color: "#6dbf6d" }}>✓ în limita 23:00</span>
+                </div>
+              )}
+            </div>
           </div>
 
           <div style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)", padding: "1rem 1.5rem", marginBottom: "1.2rem" }}>
@@ -203,15 +244,19 @@ export default function BookingWidget() {
           </div>
 
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <a href="tel:0732403464" className="btn-gold" style={{ flex: 1, textAlign: "center" }}>
-              📞 Sună acum — {ORA_PRICES[oraSelectata].durata} / {ORA_PRICES[oraSelectata].pret} lei
+            <a
+              href={`tel:0732403464`}
+              className="btn-gold"
+              style={{ flex: 1, textAlign: "center" }}
+            >
+              📞 Sună — {ORA_PRICES[oraSelectata].durata} / {ORA_PRICES[oraSelectata].pret} lei{oraStart ? ` · intrare ${oraStart}` : ""}
             </a>
             <a href="https://wa.me/40732403464" target="_blank" rel="noopener noreferrer" className="btn-outline-gold" style={{ whiteSpace: "nowrap", fontSize: "0.72rem" }}>
               💬 WhatsApp
             </a>
           </div>
           <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.65rem", color: "#555", marginTop: "0.8rem", textAlign: "center" }}>
-            Rezervarea pe oră se face exclusiv telefonic sau WhatsApp
+            Rezervarea pe oră se confirmă telefonic sau WhatsApp · Check-out maxim 23:00
           </p>
         </div>
       )}
