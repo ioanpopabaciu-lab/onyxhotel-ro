@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const camere = [
-  { name: "Cameră Single", desc: "Confortabilă și funcțională pentru o persoană. Ideală pentru transportatori și delegații în deplasare rapidă.", features: ["Pat single sau matrimonial", "Baie privată cu duș", "TV + Wi-Fi gratuit", "Climatizare", "Seif electronic"], pret: "195", img: "/images/hotel-1.jpg" },
+  { name: "Cameră Single", desc: "Confortabilă și funcțională pentru o persoană. Ideală pentru transportatori și delegații în deplasare rapidă.", features: ["Pat single sau matrimonial", "Baie privată cu duș", "TV + Wi-Fi gratuit", "Climatizare", "Seif electronic"], pret: "195", img: "/images/camera-single.jpg" },
   { name: "Cameră Dublă", desc: "Spațioasă cu pat matrimonial și pat suplimentar. Perfectă pentru cupluri sau colegi de afaceri.", features: ["Pat matrimonial + pat suplimentar", "Baie privată completă", "TV + Wi-Fi gratuit", "Climatizare", "Minibar"], pret: "230", img: "/images/camera-matrimoniala.png" },
   { name: "Cameră Triplă", desc: "Cameră generoasă pentru 3 persoane sau familii. Dotări complete și spațiu maxim de confort.", features: ["3 paturi sau configurare mixtă", "Baie privată completă", "TV + Wi-Fi gratuit", "Climatizare", "Spațiu generos"], pret: "300", img: "/images/hotel-3.jpg" },
 ];
