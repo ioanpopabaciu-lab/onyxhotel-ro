@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import BookingWidget from "@/components/BookingWidget";
 
 const slides = [
   { src: "/images/hotel-facade.png", alt: "ONYX B&B Hotel exterior" },
@@ -27,7 +28,7 @@ export default function HeroSlideshow() {
   }, []);
 
   return (
-    <section style={{ position: "relative", height: "100vh", minHeight: 640, overflow: "hidden" }}>
+    <section style={{ position: "relative", height: "100vh", minHeight: 700, overflow: "hidden" }}>
 
       {/* Slides */}
       {slides.map((slide, i) => (
@@ -45,7 +46,7 @@ export default function HeroSlideshow() {
       <div style={{ position: "absolute", inset: 0, zIndex: 2, background: "linear-gradient(to bottom, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.18) 40%, rgba(0,0,0,0.78) 100%)" }} />
 
       {/* Content */}
-      <div style={{ position: "relative", zIndex: 3, height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "0 1.5rem" }}>
+      <div style={{ position: "relative", zIndex: 3, height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "80px 1.5rem 240px" }}>
 
         {/* Badge */}
         <div className="hero-badge" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.65)", padding: "0.7rem 2rem", marginBottom: "2.2rem", backdropFilter: "blur(4px)", background: "rgba(0,0,0,0.25)" }}>
@@ -111,8 +112,13 @@ export default function HeroSlideshow() {
         }
       `}</style>
 
+      {/* Booking widget anchored at bottom */}
+      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 4, padding: "0 1.5rem 1.5rem" }}>
+        <BookingWidget />
+      </div>
+
       {/* Slide indicators */}
-      <div style={{ position: "absolute", bottom: "2.5rem", left: "50%", transform: "translateX(-50%)", zIndex: 4, display: "flex", gap: "0.5rem" }}>
+      <div style={{ position: "absolute", bottom: "230px", left: "50%", transform: "translateX(-50%)", zIndex: 5, display: "flex", gap: "0.5rem" }}>
         {slides.map((_, i) => (
           <button key={i} onClick={() => setCurrent(i)} style={{
             width: i === current ? 32 : 8, height: 8,
