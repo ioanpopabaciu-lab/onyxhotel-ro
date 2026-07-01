@@ -99,8 +99,85 @@ export default function CompaniiPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Închiriere sală */}
       <section style={{ padding: "7rem 2rem" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+            <p className="section-label">Spațiu profesional</p>
+            <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}>Închiriere sală — Cursuri, Traininguri & Conferințe</h2>
+            <div className="gold-line" />
+            <p style={{ fontFamily: "var(--font-inter)", color: "var(--text-mid)", fontSize: "0.9rem", marginTop: "1rem", maxWidth: 700, margin: "1rem auto 0" }}>
+              Sală modernă, climatizată, cu echipamente complete — configurabilă pentru training, workshop, prezentare sau conferință. Cafea, apă și snack-uri incluse în funcție de numărul de participanți.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start", marginBottom: "4rem" }} className="two-col">
+            <div style={{ position: "relative", height: 480, overflow: "hidden" }}>
+              <Image src="/images/sala-curs.png" alt="Sală cursuri și conferințe ONYX B&B" fill style={{ objectFit: "cover", objectPosition: "center" }} />
+              <div style={{ position: "absolute", top: "1.5rem", left: "1.5rem", background: "var(--gold)", padding: "0.8rem 1.4rem" }}>
+                <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 700, color: "#1a1a1a", letterSpacing: "0.12em", textTransform: "uppercase" }}>Capacitate maximă</p>
+                <p style={{ fontFamily: "var(--font-playfair)", fontSize: "1.8rem", fontWeight: 900, color: "#1a1a1a", lineHeight: 1 }}>100 locuri</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 style={{ fontFamily: "var(--font-playfair)", fontSize: "1.6rem", fontWeight: 800, color: "var(--text)", marginBottom: "0.5rem" }}>Ce este inclus</h3>
+              <div className="gold-line-left" style={{ marginBottom: "1.5rem" }} />
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", marginBottom: "2rem" }}>
+                {[
+                  "Sală climatizată, luminoasă, configurabilă după necesități",
+                  "Proiector + ecran de proiecție",
+                  "Flipchart cu markere",
+                  "Wi-Fi dedicat de mare viteză",
+                  "Microfon wireless (la cerere)",
+                  "Cafea, apă plată/minerală și snack-uri incluse",
+                  "Personal de asistență disponibil pe durata evenimentului",
+                  "Parcare gratuită pentru toți participanții",
+                ].map((item) => (
+                  <div key={item} style={{ display: "flex", gap: "0.8rem", alignItems: "flex-start" }}>
+                    <span style={{ color: "var(--gold)", flexShrink: 0, marginTop: "0.15rem", fontSize: "0.6rem" }}>✦</span>
+                    <span style={{ fontFamily: "var(--font-inter)", color: "var(--text-mid)", fontSize: "0.85rem" }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Pachete preț */}
+              <h3 style={{ fontFamily: "var(--font-playfair)", fontSize: "1.3rem", fontWeight: 800, color: "var(--text)", marginBottom: "1rem" }}>Pachete în funcție de participanți</h3>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", marginBottom: "2rem" }}>
+                {[
+                  { grup: "până la 20 persoane", detalii: "Cafea + apă + 2 pauze cu snack-uri", pret: "Preț la cerere" },
+                  { grup: "20 – 50 persoane", detalii: "Cafea + apă + 3 pauze cu snack-uri + prânz opțional", pret: "Preț la cerere" },
+                  { grup: "50 – 100 persoane", detalii: "Pachet complet: cafea, apă, snack-uri + masă de prânz inclusă", pret: "Preț la cerere" },
+                ].map((p) => (
+                  <div key={p.grup} style={{ display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", gap: "1rem", padding: "1rem 1.2rem", border: "1px solid var(--border)", background: "var(--bg-alt)", borderLeft: "3px solid var(--gold)" }}>
+                    <div>
+                      <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem", fontWeight: 700, color: "var(--text)", marginBottom: "0.2rem" }}>{p.grup}</p>
+                      <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem", color: "var(--text-mid)" }}>{p.detalii}</p>
+                    </div>
+                    <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.7rem", fontWeight: 700, color: "var(--gold)", whiteSpace: "nowrap" }}>{p.pret}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)", padding: "1rem 1.5rem", marginBottom: "1.5rem" }}>
+                <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.82rem", color: "var(--text-mid)", lineHeight: 1.7 }}>
+                  🎯 <strong style={{ color: "var(--text)" }}>Ofertă personalizată</strong> — prețul variază în funcție de numărul de participanți, durata sesiunii și serviciile solicitate. Contactați-ne pentru un deviz gratuit în 24 ore.
+                </p>
+              </div>
+
+              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                <a href={`https://wa.me/40732403464?text=${encodeURIComponent("Bună ziua! Doresc informații despre închirierea sălii pentru cursuri/training/conferință la ONYX B&B. Vă rog să-mi trimiteți un deviz.")}`} target="_blank" rel="noopener noreferrer" className="btn-gold">
+                  💬 Solicită deviz WhatsApp
+                </a>
+                <a href="tel:0732403464" className="btn-outline-dark">📞 0732 403 464</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{ padding: "7rem 2rem", background: "var(--bg-alt)" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
           <p className="section-label">Începeți parteneriatul</p>
           <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", marginBottom: "0.5rem" }}>Contactați-ne pentru o ofertă personalizată</h2>
