@@ -65,6 +65,7 @@ export default function BookingWidget() {
     background: "rgba(0,0,0,0.5)", border: "1px solid rgba(201,168,76,0.4)",
     color: "#fff", padding: "0.75rem 1rem", fontFamily: "var(--font-inter)",
     fontSize: "0.85rem", width: "100%", outline: "none", backdropFilter: "blur(4px)",
+    colorScheme: "dark",
   };
 
   const labelStyle: React.CSSProperties = {
