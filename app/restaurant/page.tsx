@@ -140,6 +140,57 @@ export default function RestaurantPage() {
         </div>
       </section>
 
+      {/* Bucătărie video */}
+      <section style={{ padding: "6rem 2rem", background: "var(--bg-alt)" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }} className="two-col">
+            <div>
+              <p className="section-label">Calitate certificată</p>
+              <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", marginBottom: "0.5rem" }}>Bucătărie la standarde internaționale</h2>
+              <div className="gold-line-left" />
+              <p style={{ fontFamily: "var(--font-inter)", color: "var(--text-mid)", fontSize: "0.9rem", lineHeight: 1.9, marginTop: "1.5rem", marginBottom: "1.5rem" }}>
+                La ONYX B&B investim constant în infrastructura culinară, pentru că știm că un preparat de calitate începe cu echipamentele potrivite. Bucătăria noastră este dotată cu utilaje profesionale de ultimă generație, respectând cu strictețe normele de igienă și siguranță alimentară impuse de standardele europene.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", marginBottom: "2rem" }}>
+                {[
+                  "Echipamente profesionale de ultimă generație",
+                  "Norme stricte de igienă și siguranță alimentară",
+                  "Ingrediente proaspete livrate zilnic",
+                  "Bucătari cu experiență în gastronomie internațională",
+                  "Capacitate de producție pentru evenimente de 300+ persoane",
+                  "Autorizații sanitare complete — verificate și valabile",
+                ].map((item) => (
+                  <div key={item} style={{ display: "flex", gap: "0.8rem", alignItems: "flex-start" }}>
+                    <span style={{ color: "var(--gold)", flexShrink: 0, marginTop: "0.1rem", fontSize: "0.6rem" }}>✦</span>
+                    <span style={{ fontFamily: "var(--font-inter)", color: "var(--text-mid)", fontSize: "0.85rem" }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div style={{ padding: "1.2rem 1.8rem", background: "var(--gold)", display: "inline-block" }}>
+                <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", fontWeight: 700, color: "#1a1a1a", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.2rem" }}>Mâncare gătită zilnic</p>
+                <p style={{ fontFamily: "var(--font-playfair)", fontSize: "1.3rem", fontWeight: 900, color: "#1a1a1a" }}>Proaspăt. Corect. Gustos.</p>
+              </div>
+            </div>
+            <div style={{ position: "relative", borderRadius: 2, overflow: "hidden", boxShadow: "0 20px 60px rgba(0,0,0,0.18)" }}>
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{ width: "100%", display: "block", maxHeight: 520, objectFit: "cover" }}
+              >
+                <source src="/videos/bucatarie.mp4" type="video/mp4" />
+              </video>
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "1.2rem 1.5rem", background: "linear-gradient(to top, rgba(0,0,0,0.75), transparent)" }}>
+                <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.7rem", color: "rgba(255,255,255,0.9)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                  📍 Bucătăria ONYX B&B · Borș, Bihor
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Bar */}
       <section style={{ padding: "4rem 2rem 6rem", background: "var(--bg-alt)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
