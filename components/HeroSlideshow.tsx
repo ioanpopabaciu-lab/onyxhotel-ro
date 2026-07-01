@@ -84,19 +84,6 @@ export default function HeroSlideshow() {
           ))}
         </div>
 
-        {/* Phone numbers */}
-        <div className="hero-contact" style={{ display: "flex", gap: "2rem", flexWrap: "wrap", justifyContent: "center", background: "rgba(0,0,0,0.4)", padding: "0.9rem 2.5rem", backdropFilter: "blur(6px)", border: "1px solid rgba(201,168,76,0.25)" }}>
-          <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.7rem", fontWeight: 700, color: "var(--gold)", letterSpacing: "0.12em", textTransform: "uppercase", alignSelf: "center" }}>Rezervări:</span>
-          {[["0732 403 464", "tel:0732403464"], ["0753 527 114", "tel:0753527114"]].map(([num, href]) => (
-            <a key={num} href={href} style={{ fontFamily: "var(--font-inter)", fontSize: "1.1rem", fontWeight: 700, color: "#fff", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", transition: "color 0.2s" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#fff")}
-            >
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.93-.93a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              {num}
-            </a>
-          ))}
-        </div>
       </div>
 
       {/* Slide indicators */}
