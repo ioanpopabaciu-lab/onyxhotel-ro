@@ -87,9 +87,13 @@ export default function RestaurantPage() {
 
       {/* Mic dejun */}
       <section style={{ padding: "6rem 2rem" }}>
-        <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
           <p className="section-label">Dimineața</p>
-          <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", marginBottom: "3rem" }}>Mic dejun (07:00–10:00)</h2>
+          <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", marginBottom: "2rem" }}>Mic dejun (07:00–10:00)</h2>
+          <div className="gold-line" />
+          <div style={{ position: "relative", height: 480, margin: "2.5rem 0", overflow: "hidden" }}>
+            <Image src="/images/mic-dejun.jpg" alt="Mic dejun ONYX B&B" fill style={{ objectFit: "cover", objectPosition: "center 60%" }} />
+          </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", maxWidth: 560, margin: "0 auto 2rem" }}>
             <div style={{ padding: "2.5rem 2rem", background: "#fff", borderTop: "3px solid var(--gold)", boxShadow: "var(--shadow)" }}>
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.63rem", color: "var(--gold)", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "0.8rem" }}>Clienți cazați</p>
