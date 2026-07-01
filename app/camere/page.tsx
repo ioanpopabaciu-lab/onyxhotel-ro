@@ -83,9 +83,13 @@ export default function CamerePage() {
 
       {/* Mic dejun */}
       <section style={{ padding: "5rem 2rem", background: "var(--bg-alt)" }}>
-        <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
           <p className="section-label">Dimineața</p>
-          <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 3vw, 2.2rem)", marginBottom: "2.5rem" }}>Mic dejun (07:00–10:00)</h2>
+          <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 3vw, 2.2rem)", marginBottom: "1.5rem" }}>Mic dejun (07:00–10:00)</h2>
+          <div className="gold-line" />
+          <div style={{ position: "relative", height: 460, margin: "2rem 0", overflow: "hidden" }}>
+            <Image src="/images/mic-dejun.jpg" alt="Mic dejun ONYX B&B" fill style={{ objectFit: "cover", objectPosition: "center 60%" }} />
+          </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", maxWidth: 520, margin: "0 auto 1.5rem" }}>
             <div style={{ padding: "2rem", background: "#fff", borderTop: "3px solid var(--gold)", boxShadow: "var(--shadow)" }}>
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", color: "var(--gold)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.6rem" }}>Clienți cazați</p>
