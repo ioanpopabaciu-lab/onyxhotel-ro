@@ -9,9 +9,9 @@ const camere = [
 ];
 
 const cazareOra = [
-  { durata: "1 oră", pret: "50" },
-  { durata: "2 ore", pret: "80" },
-  { durata: "3 ore", pret: "120" },
+  { durata: "3 ore", ore: 3, pret: "90", maxStart: "20:00" },
+  { durata: "5 ore", ore: 5, pret: "130", maxStart: "18:00" },
+  { durata: "7 ore", ore: 7, pret: "150", maxStart: "16:00" },
 ];
 
 const dotari = [
@@ -110,17 +110,26 @@ export default function CamerePage() {
           <p style={{ fontFamily: "var(--font-inter)", color: "var(--text-mid)", fontSize: "0.88rem", lineHeight: 1.8, maxWidth: 550, margin: "1.5rem auto 3rem" }}>
             Ideal pentru șoferi profesioniști care au nevoie de odihnă înainte sau după trecerea frontierei, fără să plătească o noapte întreagă.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", maxWidth: 620, margin: "0 auto 2rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", maxWidth: 700, margin: "0 auto 2rem" }}>
             {cazareOra.map((c) => (
               <div key={c.durata} style={{ padding: "2rem 1rem", background: "#fff", border: "1px solid var(--border)", boxShadow: "var(--shadow)", borderTop: "3px solid var(--gold)", textAlign: "center" }}>
                 <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.62rem", color: "var(--gold)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.6rem" }}>{c.durata}</p>
                 <p style={{ fontFamily: "var(--font-playfair)", fontSize: "2.2rem", fontWeight: 900, color: "var(--text)", lineHeight: 1 }}>
                   {c.pret} <span style={{ fontSize: "0.85rem", fontWeight: 400, color: "var(--text-mid)" }}>lei</span>
                 </p>
+                <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.6rem", color: "var(--text-light)", marginTop: "0.7rem" }}>
+                  max. intrare {c.maxStart}
+                </p>
               </div>
             ))}
           </div>
-          <a href="tel:0732403464" className="btn-gold">📞 Sună pentru disponibilitate</a>
+          <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.78rem", color: "var(--text-mid)", marginBottom: "1.5rem" }}>
+            ⏱ Check-out maxim <strong>23:00</strong> — rezervare exclusiv telefonic sau WhatsApp
+          </p>
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="tel:0732403464" className="btn-gold">📞 0732 403 464</a>
+            <a href="https://wa.me/40732403464" target="_blank" rel="noopener noreferrer" className="btn-outline-dark">💬 WhatsApp</a>
+          </div>
         </div>
       </section>
 
