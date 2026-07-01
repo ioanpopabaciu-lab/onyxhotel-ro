@@ -46,7 +46,7 @@ export default function ContactPage() {
         <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.65)" }} />
         <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
           <p className="section-label">Suntem la dispoziția dvs.</p>
-          <h1 style={{ fontFamily: "var(--font-playfair)", fontWeight: 900, fontSize: "clamp(2.5rem, 6vw, 4rem)", color: "#fff", lineHeight: 1.1 }}>Contact & Rezervări</h1>
+          <h1 style={{ fontFamily: "var(--font-playfair)", fontWeight: 900, fontSize: "clamp(2.5rem, 6vw, 4rem)", color: "#fff", lineHeight: 1.1 }}>Contact <span style={{ fontFamily: "var(--font-inter)", fontWeight: 900 }}>&</span> Rezervări</h1>
           <div className="gold-line" />
         </div>
       </section>

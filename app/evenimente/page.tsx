@@ -61,7 +61,7 @@ export default function EvenimentePage() {
         <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.6)" }} />
         <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 2rem" }}>
           <p style={{ fontFamily: "var(--font-montserrat)", fontSize: "0.72rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.8rem" }}>Momente de neuitat</p>
-          <h1 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2.5rem, 6vw, 5rem)", fontWeight: 300, color: "#fff" }}>Evenimente & Celebrări</h1>
+          <h1 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2.5rem, 6vw, 5rem)", fontWeight: 300, color: "#fff" }}>Evenimente <span style={{ fontFamily: "var(--font-inter)", fontWeight: 400 }}>&</span> Celebrări</h1>
           <div className="gold-line" />
         </div>
       </section>

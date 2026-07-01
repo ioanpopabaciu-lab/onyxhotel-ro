@@ -46,7 +46,7 @@ export default function HomePage() {
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
             <p className="section-label">De ce să ne alegeți</p>
-            <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}>De ce ONYX B&B?</h2>
+            <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}>De ce ONYX B<span style={{ fontFamily: "var(--font-inter)", fontWeight: 900 }}>&</span>B?</h2>
             <div className="gold-line" />
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1px", background: "var(--border)" }} className="why-grid">

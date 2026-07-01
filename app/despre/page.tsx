@@ -11,7 +11,7 @@ export default function DesprePage() {
         <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.62)" }} />
         <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 2rem" }}>
           <p className="section-label">Despre noi</p>
-          <h1 style={{ fontFamily: "var(--font-playfair)", fontWeight: 900, fontSize: "clamp(2.5rem, 6vw, 4.5rem)", color: "#fff", lineHeight: 1.1 }}>ONYX B&B Hotel & Restaurant</h1>
+          <h1 style={{ fontFamily: "var(--font-playfair)", fontWeight: 900, fontSize: "clamp(2.5rem, 6vw, 4.5rem)", color: "#fff", lineHeight: 1.1 }}>ONYX B<span style={{ fontFamily: "var(--font-inter)", fontWeight: 900 }}>&</span>B Hotel <span style={{ fontFamily: "var(--font-inter)", fontWeight: 900 }}>&</span> Restaurant</h1>
           <div className="gold-line" />
         </div>
       </section>

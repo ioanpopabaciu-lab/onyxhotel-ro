@@ -37,7 +37,7 @@ export default function RestaurantPage() {
         <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.65)" }} />
         <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 2rem" }}>
           <p className="section-label">Gastronomie · 100 locuri · Bar</p>
-          <h1 style={{ fontFamily: "var(--font-playfair)", fontWeight: 900, fontSize: "clamp(2.5rem, 6vw, 4.5rem)", color: "#fff", lineHeight: 1.1 }}>Restaurant ONYX B&B</h1>
+          <h1 style={{ fontFamily: "var(--font-playfair)", fontWeight: 900, fontSize: "clamp(2.5rem, 6vw, 4.5rem)", color: "#fff", lineHeight: 1.1 }}>Restaurant ONYX B<span style={{ fontFamily: "var(--font-inter)", fontWeight: 900 }}>&</span>B</h1>
           <div className="gold-line" />
           <p style={{ fontFamily: "var(--font-inter)", color: "rgba(255,255,255,0.8)", fontSize: "0.85rem", marginTop: "0.8rem" }}>
             Deschis zilnic 07:00 – 23:00 · Bar funcțional · 100 locuri · Animale permise
