@@ -32,14 +32,15 @@ export default function RestaurantPage() {
   return (
     <>
       {/* Hero */}
-      <section style={{ position: "relative", height: "52vh", minHeight: 400, display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <Image src="/images/restaurant-1.jpg" alt="Restaurant ONYX B&B" fill style={{ objectFit: "cover" }} />
-        <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.65)" }} />
-        <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 2rem" }}>
+      <section style={{ position: "relative", height: "65vh", minHeight: 480, overflow: "hidden" }}>
+        <Image src="/images/restaurant-1.jpg" alt="Restaurant ONYX B&B" fill style={{ objectFit: "cover", objectPosition: "center 30%" }} />
+        {/* Gradient: dark band at top for text, transparent in middle, slight dark at bottom */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.35) 100%)" }} />
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 1, textAlign: "center", padding: "6rem 2rem 2rem" }}>
           <p className="section-label">Gastronomie · 100 locuri · Bar</p>
           <h1 style={{ fontFamily: "var(--font-playfair)", fontWeight: 900, fontSize: "clamp(2.5rem, 6vw, 4.5rem)", color: "#fff", lineHeight: 1.1 }}>Restaurant ONYX B<span style={{ fontFamily: "var(--font-inter)", fontWeight: 900 }}>&</span>B</h1>
           <div className="gold-line" />
-          <p style={{ fontFamily: "var(--font-inter)", color: "rgba(255,255,255,0.8)", fontSize: "0.85rem", marginTop: "0.8rem" }}>
+          <p style={{ fontFamily: "var(--font-inter)", color: "rgba(255,255,255,0.85)", fontSize: "0.88rem", marginTop: "0.8rem" }}>
             Deschis zilnic 07:00 – 23:00 · Bar funcțional · 100 locuri · Animale permise
           </p>
         </div>
