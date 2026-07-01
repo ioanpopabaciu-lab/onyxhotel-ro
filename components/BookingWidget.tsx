@@ -6,12 +6,14 @@ const PRICES: Record<string, number> = {
   single: 195,
   dubla: 230,
   tripla: 300,
+  apartament: 350,
 };
 
 const LABELS: Record<string, string> = {
   single: "Single (195 lei/noapte)",
   dubla: "Dublă (230 lei/noapte)",
   tripla: "Triplă (300 lei/noapte)",
+  apartament: "Apartament (350 lei/noapte)",
 };
 
 const ORA_PRICES: { durata: string; ore: number; pret: number }[] = [
@@ -154,13 +156,24 @@ export default function BookingWidget() {
           )}
 
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Link
-              href={`/contact?checkin=${checkin}&checkout=${checkout}&camera=${roomType}&persoane=${guests}&card=${payCard}`}
+            <a
+              href={result ? `https://wa.me/40732403464?text=${encodeURIComponent(
+                `Bună ziua! Doresc să rezerv o cameră la ONYX B&B:\n\n` +
+                `📅 Check-in: ${checkin}\n` +
+                `📅 Check-out: ${checkout}\n` +
+                `🛏 Tip cameră: ${LABELS[roomType]}\n` +
+                `👤 Persoane: ${guests}\n` +
+                `💰 Total estimat: ${result.totalFinal} lei (${result.nopti} ${result.nopti === 1 ? "noapte" : "nopți"})\n` +
+                (payCard ? `💳 Doresc să plătesc cu cardul\n` : ``) +
+                `\nVă rog să confirmați disponibilitatea. Mulțumesc!`
+              )}` : undefined}
               className="btn-gold"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ flex: 1, textAlign: "center", opacity: !result ? 0.5 : 1, pointerEvents: !result ? "none" : "auto" }}
             >
-              {payCard ? "Rezervă & Plătește cu cardul" : "Rezervă acum"}
-            </Link>
+              💬 {payCard ? "Rezervă & confirmă WhatsApp" : "Rezervă acum — WhatsApp"}
+            </a>
             <a href="tel:0732403464" className="btn-outline-gold" style={{ whiteSpace: "nowrap", fontSize: "0.68rem" }}>
               📞 Rezervă telefonic
             </a>

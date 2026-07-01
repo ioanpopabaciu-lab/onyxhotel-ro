@@ -10,7 +10,30 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 800));
+
+    const subject = encodeURIComponent(`Rezervare ONYX B&B — ${form.tip} — ${form.nume}`);
+    const body = encodeURIComponent(
+      `Nume: ${form.nume}\n` +
+      `Telefon: ${form.telefon}\n` +
+      `Email: ${form.email || "—"}\n` +
+      `Tip solicitare: ${form.tip}\n` +
+      `Perioadă / Dată: ${form.perioada || "—"}\n\n` +
+      `Mesaj:\n${form.mesaj}`
+    );
+
+    // Trimite via WhatsApp (instant) + deschide email
+    const waMsg = encodeURIComponent(
+      `*Rezervare ONYX B&B*\n\n` +
+      `Nume: ${form.nume}\n` +
+      `Telefon: ${form.telefon}\n` +
+      `Tip: ${form.tip}\n` +
+      `Perioadă: ${form.perioada || "—"}\n\n` +
+      `${form.mesaj}`
+    );
+
+    window.open(`https://wa.me/40732403464?text=${waMsg}`, "_blank");
+
+    await new Promise((r) => setTimeout(r, 400));
     setSent(true);
     setLoading(false);
   };
@@ -98,8 +121,8 @@ export default function ContactPage() {
             {sent ? (
               <div style={{ marginTop: "3rem", padding: "3rem", border: "2px solid var(--gold)", textAlign: "center", background: "#fff" }}>
                 <p style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>✦</p>
-                <h3 style={{ fontFamily: "var(--font-playfair)", fontSize: "1.8rem", color: "var(--gold)", marginBottom: "0.5rem" }}>Mesaj trimis cu succes!</h3>
-                <p style={{ fontFamily: "var(--font-inter)", color: "var(--text-mid)", fontSize: "0.85rem" }}>Vă vom contacta în cel mai scurt timp la numărul sau emailul furnizat.</p>
+                <h3 style={{ fontFamily: "var(--font-playfair)", fontSize: "1.8rem", color: "var(--gold)", marginBottom: "0.5rem" }}>Mesaj trimis pe WhatsApp!</h3>
+                <p style={{ fontFamily: "var(--font-inter)", color: "var(--text-mid)", fontSize: "0.85rem" }}>Solicitarea a fost trimisă pe WhatsApp. Vă vom răspunde în cel mai scurt timp. Puteți suna și direct la <a href="tel:0732403464" style={{ color: "var(--gold)" }}>0732 403 464</a>.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ marginTop: "2rem", display: "flex", flexDirection: "column", gap: "1.2rem" }}>
