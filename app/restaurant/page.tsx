@@ -177,7 +177,7 @@ export default function RestaurantPage() {
                 muted
                 loop
                 playsInline
-                style={{ width: "100%", display: "block", maxHeight: 520, objectFit: "cover" }}
+                style={{ width: "100%", display: "block" }}
               >
                 <source src="/videos/bucatarie.mp4" type="video/mp4" />
               </video>
