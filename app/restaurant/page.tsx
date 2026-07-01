@@ -32,7 +32,7 @@ export default function RestaurantPage() {
   return (
     <>
       {/* Hero */}
-      <section style={{ position: "relative", height: "65vh", minHeight: 480, overflow: "hidden" }}>
+      <section style={{ position: "relative", height: "85vh", minHeight: 600, overflow: "hidden" }}>
         <Image src="/images/restaurant-1.jpg" alt="Restaurant ONYX B&B" fill style={{ objectFit: "cover", objectPosition: "center 75%" }} />
         {/* Gradient: dark band at top for text, transparent in middle, slight dark at bottom */}
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.35) 100%)" }} />
