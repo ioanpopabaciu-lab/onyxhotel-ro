@@ -5,7 +5,8 @@ import Link from "next/link";
 const camere = [
   { name: "Cameră Single", desc: "Confortabilă și funcțională pentru o persoană. Ideală pentru transportatori și delegații în deplasare rapidă.", features: ["Pat single sau matrimonial", "Baie privată cu duș", "TV + Wi-Fi gratuit", "Climatizare", "Seif electronic"], pret: "195", img: "/images/camera-single.jpg" },
   { name: "Cameră Dublă", desc: "Spațioasă cu pat matrimonial și pat suplimentar. Perfectă pentru cupluri sau colegi de afaceri.", features: ["Pat matrimonial + pat suplimentar", "Baie privată completă", "TV + Wi-Fi gratuit", "Climatizare", "Minibar"], pret: "230", img: "/images/camera-matrimoniala.png" },
-  { name: "Cameră Triplă", desc: "Cameră generoasă pentru 3 persoane sau familii. Dotări complete și spațiu maxim de confort.", features: ["3 paturi sau configurare mixtă", "Baie privată completă", "TV + Wi-Fi gratuit", "Climatizare", "Spațiu generos"], pret: "300", img: "/images/hotel-3.jpg" },
+  { name: "Cameră Triplă", desc: "Cameră generoasă pentru 3 persoane sau familii. Dotări complete și spațiu maxim de confort.", features: ["2 paturi individuale + pat suplimentar", "Baie privată completă", "TV + Wi-Fi gratuit", "Climatizare", "Spațiu generos"], pret: "300", img: "/images/camera-tripla.jpg" },
+  { name: "Apartament", desc: "Spațiu superior cu pat matrimonial elegant și zone separate de relaxare. Ideal pentru șederi prelungite sau oaspeți care doresc confort maxim.", features: ["Pat matrimonial dublu", "Baie privată completă", "TV + Wi-Fi gratuit", "Climatizare", "Spațiu de lucru"], pret: "350", img: "/images/camera-apartament.jpg" },
 ];
 
 const cazareOra = [
@@ -44,7 +45,7 @@ export default function CamerePage() {
           <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}>Alegeți camera potrivită</h2>
           <div className="gold-line" />
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }} className="rooms-grid">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.5rem" }} className="rooms-grid">
           {camere.map((camera) => (
             <div key={camera.name} style={{ background: "#fff", boxShadow: "var(--shadow)", overflow: "hidden", transition: "box-shadow 0.3s, transform 0.3s" }}
               onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "var(--shadow-lg)"; e.currentTarget.style.transform = "translateY(-3px)"; }}
@@ -174,7 +175,7 @@ export default function CamerePage() {
       </section>
 
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 700px) {
           .rooms-grid { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 600px) {
