@@ -73,11 +73,11 @@ export default function HeroSlideshow() {
         </p>
 
         {/* 4 CTA Buttons */}
-        <div className="hero-btns" style={{ display: "flex", gap: "0.8rem", flexWrap: "wrap", justifyContent: "center" }}>
+        <div className="hero-btns" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
           {ctaButtons.map((btn) => (
             <Link key={btn.label} href={btn.href}
               className={btn.primary ? "btn-gold" : "btn-white"}
-              style={{ fontSize: "0.67rem", padding: "0.82rem 1.8rem" }}
+              style={{ fontSize: "0.82rem", padding: "1rem 2.2rem", fontWeight: 700, letterSpacing: "0.12em" }}
             >
               {btn.label}
             </Link>
@@ -85,13 +85,14 @@ export default function HeroSlideshow() {
         </div>
 
         {/* Quick contact */}
-        <div className="hero-contact" style={{ marginTop: "2rem", display: "flex", gap: "2rem", flexWrap: "wrap", justifyContent: "center" }}>
+        <div className="hero-contact" style={{ marginTop: "2.2rem", display: "flex", gap: "2.5rem", flexWrap: "wrap", justifyContent: "center", background: "rgba(0,0,0,0.35)", padding: "1rem 2.5rem", backdropFilter: "blur(4px)" }}>
           {[["0732 403 464", "tel:0732403464"], ["0753 527 114", "tel:0753527114"]].map(([num, href]) => (
-            <a key={num} href={href} style={{ fontFamily: "var(--font-inter)", fontSize: "0.85rem", color: "rgba(255,255,255,0.72)", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.4rem", transition: "color 0.2s" }}
+            <a key={num} href={href} style={{ fontFamily: "var(--font-inter)", fontSize: "1.05rem", fontWeight: 600, color: "#fff", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.6rem", transition: "color 0.2s" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.72)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#fff")}
             >
-              <span style={{ color: "var(--gold)" }}>📞</span> {num}
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.93-.93a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              {num}
             </a>
           ))}
         </div>
